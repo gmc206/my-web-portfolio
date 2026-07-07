@@ -1,4 +1,4 @@
-// Kwak Minchul Portfolio Interactivity Scripts
+// Kwak Minchul Portfolio Interactivity Scripts (Synchronized with Deep Green Theme)
 
 document.addEventListener('DOMContentLoaded', () => {
     initCanvasBackground();
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileNav();
 });
 
-/* 1. Canvas Particle Background */
+/* 1. Canvas Particle Background (Deep Green / Sage Nodes) */
 function initCanvasBackground() {
     const canvas = document.getElementById('bg-canvas');
     const ctx = canvas.getContext('2d');
@@ -30,13 +30,13 @@ function initCanvasBackground() {
             this.vx = (Math.random() - 0.5) * 0.4;
             this.vy = (Math.random() - 0.5) * 0.4;
             this.radius = Math.random() * 2 + 1;
-            this.alpha = Math.random() * 0.5 + 0.2;
+            this.alpha = Math.random() * 0.4 + 0.15;
         }
         
         draw() {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(6, 182, 212, ${this.alpha})`;
+            ctx.fillStyle = `rgba(11, 60, 38, ${this.alpha})`; // Deep Green
             ctx.fill();
         }
         
@@ -71,8 +71,8 @@ function initCanvasBackground() {
                 const dist = Math.sqrt(dx * dx + dy * dy);
                 
                 if (dist < 120) {
-                    const alpha = (1 - dist / 120) * 0.15;
-                    ctx.strokeStyle = `rgba(168, 85, 247, ${alpha})`;
+                    const alpha = (1 - dist / 120) * 0.12;
+                    ctx.strokeStyle = `rgba(66, 107, 84, ${alpha})`; // Sage Green connections
                     ctx.lineWidth = 0.5;
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
@@ -87,7 +87,7 @@ function initCanvasBackground() {
     animate();
 }
 
-/* 2. Interactive Charts & Control Panel Dashboard */
+/* 2. Interactive Charts & Control Panel Dashboard (Deep Green & Sage Theme) */
 function initChartDashboard() {
     const ctx = document.getElementById('analyticsChart').getContext('2d');
     
@@ -108,16 +108,16 @@ function initChartDashboard() {
                 {
                     label: 'Precision (정밀도)',
                     data: [0.35, 0.42, 0.55, 0.68, 0.79, 0.87, 0.92, 0.96, 0.98, 0.99, 1.0],
-                    borderColor: '#06b6d4',
-                    backgroundColor: 'rgba(6, 182, 212, 0.1)',
+                    borderColor: '#0B3C26', // Deep Green
+                    backgroundColor: 'rgba(11, 60, 38, 0.05)',
                     tension: 0.3,
                     fill: true
                 },
                 {
                     label: 'Recall (재현율)',
                     data: [1.0, 0.99, 0.97, 0.94, 0.89, 0.82, 0.70, 0.54, 0.35, 0.18, 0.0],
-                    borderColor: '#a855f7',
-                    backgroundColor: 'rgba(168, 85, 247, 0.1)',
+                    borderColor: '#426B54', // Sage Green
+                    backgroundColor: 'rgba(66, 107, 84, 0.05)',
                     tension: 0.3,
                     fill: true
                 }
@@ -126,11 +126,11 @@ function initChartDashboard() {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { labels: { color: '#94a3b8', font: { family: 'Inter' } } }
+                    legend: { labels: { color: '#1A2E22', font: { family: 'Inter', weight: 'bold' } } }
                 },
                 scales: {
-                    x: { grid: { color: 'rgba(255, 255, 255, 0.05)' }, ticks: { color: '#94a3b8' } },
-                    y: { grid: { color: 'rgba(255, 255, 255, 0.05)' }, ticks: { color: '#94a3b8' }, min: 0, max: 1 }
+                    x: { grid: { color: 'rgba(11, 60, 38, 0.05)' }, ticks: { color: '#556B5D' } },
+                    y: { grid: { color: 'rgba(11, 60, 38, 0.05)' }, ticks: { color: '#556B5D' }, min: 0, max: 1 }
                 }
             }
         },
@@ -141,16 +141,16 @@ function initChartDashboard() {
                 {
                     label: '실제 매출 (₩억)',
                     data: [12, 14.5, 13.8, 17.2, null, null, null, null],
-                    borderColor: '#06b6d4',
-                    backgroundColor: '#06b6d4',
+                    borderColor: '#0B3C26',
+                    backgroundColor: '#0B3C26',
                     pointRadius: 6
                 },
                 {
                     label: 'AI 예측 매출 (₩억)',
                     data: [12, 14.2, 14.0, 16.9, 18.5, 19.8, 22.0, 24.5],
-                    borderColor: '#a855f7',
+                    borderColor: '#426B54',
                     borderDash: [5, 5],
-                    backgroundColor: 'rgba(168, 85, 247, 0.1)',
+                    backgroundColor: 'rgba(66, 107, 84, 0.05)',
                     fill: false
                 }
             ],
@@ -158,11 +158,11 @@ function initChartDashboard() {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { labels: { color: '#94a3b8', font: { family: 'Inter' } } }
+                    legend: { labels: { color: '#1A2E22', font: { family: 'Inter', weight: 'bold' } } }
                 },
                 scales: {
-                    x: { grid: { color: 'rgba(255, 255, 255, 0.05)' }, ticks: { color: '#94a3b8' } },
-                    y: { grid: { color: 'rgba(255, 255, 255, 0.05)' }, ticks: { color: '#94a3b8' } }
+                    x: { grid: { color: 'rgba(11, 60, 38, 0.05)' }, ticks: { color: '#556B5D' } },
+                    y: { grid: { color: 'rgba(11, 60, 38, 0.05)' }, ticks: { color: '#556B5D' } }
                 }
             }
         },
@@ -173,15 +173,15 @@ function initChartDashboard() {
                 {
                     label: '지출 비용 (₩백만)',
                     data: [15, 24, 8, 5, 3],
-                    backgroundColor: 'rgba(6, 182, 212, 0.6)',
-                    borderColor: '#06b6d4',
+                    backgroundColor: 'rgba(11, 60, 38, 0.7)',
+                    borderColor: '#0B3C26',
                     borderWidth: 1
                 },
                 {
                     label: '획득 매출 (₩백만)',
                     data: [35, 68, 12, 18, 14],
-                    backgroundColor: 'rgba(168, 85, 247, 0.6)',
-                    borderColor: '#a855f7',
+                    backgroundColor: 'rgba(66, 107, 84, 0.7)',
+                    borderColor: '#426B54',
                     borderWidth: 1
                 }
             ],
@@ -189,11 +189,11 @@ function initChartDashboard() {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { labels: { color: '#94a3b8', font: { family: 'Inter' } } }
+                    legend: { labels: { color: '#1A2E22', font: { family: 'Inter', weight: 'bold' } } }
                 },
                 scales: {
-                    x: { grid: { color: 'rgba(255, 255, 255, 0.05)' }, ticks: { color: '#94a3b8' } },
-                    y: { grid: { color: 'rgba(255, 255, 255, 0.05)' }, ticks: { color: '#94a3b8' } }
+                    x: { grid: { color: 'rgba(11, 60, 38, 0.05)' }, ticks: { color: '#556B5D' } },
+                    y: { grid: { color: 'rgba(11, 60, 38, 0.05)' }, ticks: { color: '#556B5D' } }
                 }
             }
         }
@@ -221,7 +221,6 @@ function initChartDashboard() {
         recallEl.innerText = `${(rVal * 100).toFixed(1)}%`;
         
         // Calculate simulated business ROI (bell curve layout maximized around 0.5 - 0.6)
-        // ROI formula mapping
         const roi = (-100 * Math.pow(val - 0.55, 2) + 22).toFixed(1);
         roiEl.innerText = `${roi > 0 ? '+' : ''}${roi}%`;
     }
@@ -310,11 +309,11 @@ function initScrollAnimations() {
     const header = document.querySelector('.main-header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            header.style.background = 'rgba(9, 13, 22, 0.95)';
-            header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
+            header.style.background = 'rgba(244, 247, 245, 0.95)';
+            header.style.boxShadow = '0 10px 30px rgba(11, 60, 38, 0.05)';
             header.style.height = '70px';
         } else {
-            header.style.background = 'rgba(9, 13, 22, 0.7)';
+            header.style.background = 'rgba(244, 247, 245, 0.85)';
             header.style.boxShadow = 'none';
             header.style.height = '80px';
         }
@@ -339,7 +338,7 @@ function initMobileNav() {
                 navLinksContainer.style.top = '80px';
                 navLinksContainer.style.left = '0';
                 navLinksContainer.style.width = '100%';
-                navLinksContainer.style.background = 'rgba(9, 13, 22, 0.95)';
+                navLinksContainer.style.background = 'rgba(244, 247, 245, 0.98)';
                 navLinksContainer.style.padding = '2rem';
                 navLinksContainer.style.borderBottom = '1px solid var(--border-color)';
                 navLinksContainer.style.gap = '1.5rem';
