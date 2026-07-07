@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI 에이전트와 협업하여 머신러닝 파이프라인을 구축하고 비즈니스 전략 리포트를 설계하는 데이터 파트너 곽민철의 포트폴리오입니다.">
+    <title>곽민철 | Data Analyst & Strategy Partner</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Canvas for Interactive Particle System -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-accent">&lt;</span>MK<span class="logo-accent"> /&gt;</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#about" class="nav-link">소개</a>
+                <a href="#dashboard" class="nav-link">분석 대시보드</a>
+                <a href="#skills" class="nav-link">기술 스택</a>
+                <a href="#projects" class="nav-link">프로젝트</a>
+                <a href="#contact" class="nav-link btn-contact">연락하기</a>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="메뉴 열기">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span> Available for Projects
+                </div>
+                <h1 class="hero-title">
+                    곽민철
+                    <span class="hero-subtitle">Data Analyst & Strategy Partner</span>
+                </h1>
+                <p class="hero-description">
+                    AI 에이전트와 긴밀하게 협업하여 고도화된 머신러닝 파이프라인을 구축하고, 
+                    데이터 속 숨겨진 인사이트를 발굴하여 실행 가능한 비즈니스 전략 리포트를 설계합니다.
+                </p>
+                <div class="hero-actions">
+                    <a href="#dashboard" class="btn btn-primary">대시보드 보기 <i class="fa-solid fa-chart-line"></i></a>
+                    <a href="#projects" class="btn btn-secondary">프로젝트 보기</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>SCROLL DOWN</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tagline">ABOUT ME</span>
+                    <h2 class="section-title">AI 협업형 데이터 파트너</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-card intro-card">
+                        <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+                        <h3>AI Agent Co-working</h3>
+                        <p>최신 AI 에이전트 도구를 활용하여 코딩 효율을 극대화하고 복잡한 데이터 정제 및 모델 실험 주기를 단축합니다. 인간의 도메인 지식과 AI의 고속 처리 능력을 결합합니다.</p>
+                    </div>
+                    <div class="about-card pipeline-card">
+                        <div class="card-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                        <h3>ML Pipeline Build</h3>
+                        <p>데이터 수집부터 전처리, 피처 엔지니어링, 모델 학습 및 배포에 이르는 엔드투엔드(End-to-End) 머신러닝 파이프라인을 체계적으로 설계하고 자동화합니다.</p>
+                    </div>
+                    <div class="about-card strategy-card">
+                        <div class="card-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                        <h3>Business Strategy</h3>
+                        <p>단순한 지표 보고를 넘어 의사결정권자가 즉시 실행할 수 있는 비즈니스 가치 중심의 전략 시나리오를 도출하고 시각화 리포트를 작성합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Dashboard Section -->
+        <section id="dashboard" class="dashboard-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tagline">INTERACTIVE DEMO</span>
+                    <h2 class="section-title">데이터 분석 쇼케이스</h2>
+                    <p class="section-subtitle">실시간 데이터 조작 및 모델 메트릭 대시보드 데모입니다.</p>
+                </div>
+                <div class="dashboard-container">
+                    <div class="dashboard-sidebar">
+                        <h3>컨트롤 패널</h3>
+                        <div class="control-group">
+                            <label for="dataset-select">데이터셋 선택</label>
+                            <select id="dataset-select" class="form-control">
+                                <option value="churn">고객 이탈 분석 (Churn)</option>
+                                <option value="revenue">매출 예측 모델 (Revenue)</option>
+                                <option value="marketing">마케팅 ROI 분석 (Marketing)</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label for="model-threshold">이탈 판단 임계값 (Threshold)</label>
+                            <input type="range" id="model-threshold" min="0.1" max="0.9" step="0.05" value="0.5" class="slider">
+                            <div class="slider-val-container">
+                                <span>Value:</span> <span id="threshold-val">0.50</span>
+                            </div>
+                        </div>
+                        <div class="metrics-grid">
+                            <div class="metric-mini-card">
+                                <span class="metric-label">정밀도 (Precision)</span>
+                                <span id="metric-precision" class="metric-value">87.4%</span>
+                            </div>
+                            <div class="metric-mini-card">
+                                <span class="metric-label">재현율 (Recall)</span>
+                                <span id="metric-recall" class="metric-value">82.1%</span>
+                            </div>
+                            <div class="metric-mini-card">
+                                <span class="metric-label">예상 개선 ROI</span>
+                                <span id="metric-roi" class="metric-value">+14.2%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-main">
+                        <div class="chart-wrapper">
+                            <canvas id="analyticsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tagline">SKILL STACK</span>
+                    <h2 class="section-title">전문 기술 영역</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-code"></i> Data & Code</h3>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Python (Pandas, NumPy, Scikit-Learn)</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>SQL & Data Warehouse (BigQuery, PostgreSQL)</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-gears"></i> ML & AI System</h3>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Machine Learning Pipeline (Airflow, MLflow)</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>AI Agent Workflows & Prompt Engineering</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-chart-pie"></i> Visualization & Strategy</h3>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>BI Tools (Tableau, Looker Studio)</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Business Impact Modeling & Reporting</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tagline">PORTFOLIO</span>
+                    <h2 class="section-title">주요 프로젝트</h2>
+                </div>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <article class="project-card">
+                        <div class="project-img-placeholder">
+                            <i class="fa-solid fa-robot"></i>
+                            <div class="img-overlay"></div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Machine Learning</span>
+                            <h3>AI 에이전트 협업형 고객 이탈 예측 파이프라인</h3>
+                            <p>사용자 행동 로그 데이터를 기반으로 이탈 가능성이 높은 유저를 실시간으로 스코어링하는 자동화 ML 파이프라인을 구축했습니다. AI 에이전트를 연동해 특성 추출 코드를 자동 검증했습니다.</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Scikit-learn</span>
+                                <span class="tag">Airflow</span>
+                                <span class="tag">AI Agent</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card">
+                        <div class="project-img-placeholder">
+                            <i class="fa-solid fa-compass"></i>
+                            <div class="img-overlay"></div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Business Strategy</span>
+                            <h3>SaaS 신규 시장 진입을 위한 코호트 분석 & 전략 리포트</h3>
+                            <p>기존 고객 결제 데이터를 코호트 분석하여 LTV가 가장 높은 타겟 세그먼트를 추출하고, 신규 시장 진입 시의 가격 정책 및 예상 ROI 시나리오 전략 리포트를 작성했습니다.</p>
+                            <div class="project-tags">
+                                <span class="tag">SQL</span>
+                                <span class="tag">Tableau</span>
+                                <span class="tag">Cohort Analysis</span>
+                                <span class="tag">Strategy</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card">
+                        <div class="project-img-placeholder">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            <div class="img-overlay"></div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Data Engineering</span>
+                            <h3>이커머스 실시간 매출 대시보드 구축 및 성과 추적</h3>
+                            <p>데이터 웨어하우스 BigQuery를 소스로 삼아 일일 매출 지표, 마케팅 채널 효율을 모니터링하는 인터랙티브 Looker Studio 대시보드를 구축하고 자동 알림 시스템을 연동했습니다.</p>
+                            <div class="project-tags">
+                                <span class="tag">BigQuery</span>
+                                <span class="tag">Looker Studio</span>
+                                <span class="tag">Slack API</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <span class="section-tagline">GET IN TOUCH</span>
+                        <h2>함께 비즈니스를 혁신해 보세요</h2>
+                        <p>프로젝트 의뢰, 협업 제안, 혹은 데이터 관련 질문 등 언제나 환영합니다. 아래 폼을 작성해 주시면 24시간 내에 답변 드리겠습니다.</p>
+                        <ul class="contact-details">
+                            <li><i class="fa-solid fa-envelope"></i> admin@minchul.com</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Seoul, South Korea</li>
+                            <li>
+                                <div class="social-links">
+                                    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <form class="contact-form" onsubmit="event.preventDefault(); alert('메시지가 성공적으로 전송되었습니다! (데모)');">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">이름</label>
+                                <input type="text" id="name" required class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">이메일</label>
+                                <input type="email" id="email" required class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">제목</label>
+                            <input type="text" id="subject" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">메시지</label>
+                            <textarea id="message" rows="5" required class="form-control"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">메시지 보내기 <i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 Kwak Minchul. All rights reserved.</p>
+            <p class="footer-sub">Designed & Programmed in collaboration with AI Agent</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
