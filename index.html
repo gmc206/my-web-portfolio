@@ -17,7 +17,9 @@
     <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
+    <!-- Custom Style and Interactivity Scripts (Unified Head Linking) -->
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
     <!-- Background Canvas for Interactive Particle System -->
@@ -31,6 +33,7 @@
             </a>
             <nav class="nav-links">
                 <a href="#about" class="nav-link">소개</a>
+                <a href="#timeline" class="nav-link">연혁</a>
                 <a href="#dashboard" class="nav-link">분석 대시보드</a>
                 <a href="#skills" class="nav-link">기술 스택</a>
                 <a href="#projects" class="nav-link">프로젝트</a>
@@ -62,10 +65,6 @@
                     <a href="#projects" class="btn btn-secondary">프로젝트 보기</a>
                 </div>
             </div>
-            <div class="scroll-indicator">
-                <span>SCROLL DOWN</span>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
         </section>
 
         <!-- About Section -->
@@ -90,6 +89,46 @@
                         <div class="card-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
                         <h3>Business Strategy</h3>
                         <p>단순한 지표 보고를 넘어 의사결정권자가 즉시 실행할 수 있는 비즈니스 가치 중심의 전략 시나리오를 도출하고 시각화 리포트를 작성합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="timeline-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tagline">EXPERIENCE & JOURNEY</span>
+                    <h2 class="section-title">커리어 연혁</h2>
+                    <p class="section-subtitle">데이터 분석가 및 비즈니스 전략 파트너로서 걸어온 발전 과정입니다.</p>
+                </div>
+                <div class="timeline-wrapper">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2024 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Senior Data Analyst & Strategy Partner</h3>
+                            <p class="timeline-company">프리랜서 / 비즈니스 데이터 컨설턴트</p>
+                            <p>AI 에이전트 협업 워크플로우를 도입해 머신러닝 분석 파이프라인(Airflow)을 설계 및 고도화하고, 대용량 비즈니스 데이터의 코호트 분석과 매출 기여도 최적화 전략 리포트를 책임집니다.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2022 - 2024</div>
+                        <div class="timeline-content">
+                            <h3>Machine Learning Pipeline Engineer</h3>
+                            <p class="timeline-company">DataTech Labs (데이터 기술 부서)</p>
+                            <p>이커머스/SaaS 서비스의 매출 예측 모형 및 고객 행동 세그멘테이션 파이프라인을 구축했습니다. BigQuery 데이터 마트 모델링 설계와 MLflow를 활용한 MLOps 관리 체계를 마련했습니다.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2020 - 2022</div>
+                        <div class="timeline-content">
+                            <h3>Business Data Analyst</h3>
+                            <p class="timeline-company">Growth Synergy Group (비즈니스 인텔리전스 팀)</p>
+                            <p>고객 행동 로그에 근거한 이탈(Churn) 스코어링 모형 개발 및 마케팅 채널 효율성(ROAS) 분석을 담당했습니다. Tableau 및 Looker Studio로 실시간 리포트를 구축하여 의사결정 속도를 향상했습니다.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -329,8 +368,5 @@
             <p class="footer-sub">Designed & Programmed in collaboration with AI Agent</p>
         </div>
     </footer>
-
-    <!-- Scripts -->
-    <script src="app.js"></script>
 </body>
 </html>
